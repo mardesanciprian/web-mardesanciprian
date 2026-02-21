@@ -1,0 +1,32 @@
+{
+  "site": {
+    "name": "Asociación Mar de San Ciprián",
+    "tagline": "Cultural · Marinera · Social"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "La Asociación",
+    "activities": "Actividades",
+    "news": "Noticias",
+    "gallery": "Galería",
+    "contact": "Contacto",
+    "join": "Hazte socio"
+  },
+  "home": {
+    "heroTitle": "Asociación Mar de San Ciprián",
+    "heroSubtitle": "Cultura, tradición y comunidad en la Mariña Lucense"
+  },
+  "aboutPage": {
+    "title": "La Asociación",
+    "historyTitle": "Nuestra historia",
+    "historyP1": "La Asociación Mar de San Ciprián nace con la voluntad de conservar, promover y compartir la cultura marinera y el patrimonio ligado al mar, que forma parte de la identidad de nuestra villa. Trabajamos para mantener vivas las tradiciones e impulsar actividades culturales y sociales abiertas a toda la comunidad.",
+    "missionTitle": "Nuestra misión",
+    "missionBullets": [
+      "Promover la cultura y tradición marinera.",
+      "Organizar actividades culturales, divulgativas y sociales.",
+      "Fomentar la participación vecinal y la convivencia.",
+      "Poner en valor el patrimonio marítimo y local."
+    ],
+    "boardTitle": "Junta Directiva"
+  }
+}
