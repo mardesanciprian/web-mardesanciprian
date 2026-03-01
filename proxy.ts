@@ -24,5 +24,5 @@ export function proxy(request: NextRequest) {
   if (pathnameHasLocale) return
 
   // Si entra sin idioma → redirigir a español por defecto
-  return NextResponse.redirect(new URL(`/es${pathname}`, request.url))
+  return NextResponse.redirect(new URL(`/gl${pathname}`, request.url))
 }

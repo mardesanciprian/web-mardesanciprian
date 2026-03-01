@@ -17,7 +17,7 @@ export function middleware(req: NextRequest) {
 
   // Si es la raíz, manda a /es
   if (pathname === "/") {
-    return NextResponse.redirect(new URL("/es", req.url));
+ return NextResponse.redirect(new URL("/gl", req.url));   
   }
 
   // Primer segmento
@@ -29,7 +29,7 @@ export function middleware(req: NextRequest) {
   }
 
   // Si viene sin idioma, lo metemos por defecto en /es
-  return NextResponse.redirect(new URL(`/es${pathname}`, req.url));
+  return NextResponse.redirect(new URL(`/gl${pathname}`, req.url));
 }
 
 export const config = {

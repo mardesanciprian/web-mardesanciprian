@@ -44,7 +44,7 @@ export default async function MerchandisingPage({
       {/* Imagen principal merchandising */}
       <div className="mt-8 rounded-3xl border bg-white shadow-sm overflow-hidden">
         <img
-          src="/images/merch/set-merch.png"
+          src="/images/merch/set-merch-new.png"
           alt="Merchandising Asociación Mar de San Ciprián"
           className="w-full h-auto"
         />

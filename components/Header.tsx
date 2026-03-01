@@ -76,9 +76,9 @@ export default function Header({ lang }: Props) {
       {/* Logo + nombre */}
 <Link href={`/${lang}`} className="flex items-center gap-3 min-w-0">
   <img
-    src="/images/logo.png"
+    src="/images/logo-mardesanciprian.png"
     alt="Logo Asociación Mar de San Ciprián"
-    className="h-16 w-auto shrink-0"
+    className="h-26 w-auto shrink-0"
   />
 
   <span className="hidden sm:block font-semibold text-lg leading-tight">
