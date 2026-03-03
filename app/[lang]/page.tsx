@@ -33,13 +33,17 @@ export default async function Home({
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-20 sm:py-28">
           <div className="max-w-3xl">
             <h1 className="text-white text-4xl sm:text-6xl font-bold leading-tight">
-              {t.home.heroTitle}
+              Asociación Mar de San Ciprián
             </h1>
 
-            
+            <p className="mt-2 text-white/80 text-sm sm:text-base">
+              Nº-REX- 2004-007663-1º (LU)
+            </p>
 
-            <p className="text-white/90 text-lg sm:text-2xl mt-5">
-              {t.home.heroSubtitle}
+            <p className="mt-3 text-white/90 text-lg sm:text-xl">
+              {isGL
+                ? "Cultura mariñeira, tradición e comunidade"
+                : "Cultura marinera, tradición y comunidad"}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
