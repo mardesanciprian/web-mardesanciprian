@@ -1,28 +1,36 @@
-import { NextResponse } from "next/server"
-import type { NextRequest } from "next/server"
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-const PUBLIC_FILE = /\.(.*)$/
-const locales = ["es", "gl"]
+const PUBLIC_FILE = /\.(.*)$/;
+const locales = ["es", "gl"];
 
 export function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl
+  const { pathname } = request.nextUrl;
 
-  // Ignorar archivos estáticos y rutas internas de Next
+  // Ignorar archivos internos, API, Centro de Gestión
+  // y archivos públicos con extensión.
   if (
     pathname.startsWith("/_next") ||
-    pathname.includes("/api/") ||
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/gestion") ||
     PUBLIC_FILE.test(pathname)
   ) {
-    return
+    return NextResponse.next();
   }
 
-  // Si ya tiene idioma en la URL → dejar pasar
+  // Si la dirección ya contiene idioma, dejarla pasar.
   const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  )
+    (locale) =>
+      pathname.startsWith(`/${locale}/`) ||
+      pathname === `/${locale}`
+  );
 
-  if (pathnameHasLocale) return
+  if (pathnameHasLocale) {
+    return NextResponse.next();
+  }
 
-  // Si entra sin idioma → redirigir a español por defecto
-  return NextResponse.redirect(new URL(`/gl${pathname}`, request.url))
+  // La web pública utiliza gallego por defecto.
+  return NextResponse.redirect(
+    new URL(`/gl${pathname}`, request.url)
+  );
 }
