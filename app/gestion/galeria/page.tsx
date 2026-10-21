@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
@@ -73,7 +74,10 @@ export default async function GaleriaGestionPage() {
         created_at
       `
     )
-    .order("fecha_evento", { ascending: false, nullsFirst: false })
+    .order("fecha_evento", {
+      ascending: false,
+      nullsFirst: false,
+    })
     .order("created_at", { ascending: false });
 
   if (albumesError) {
@@ -391,17 +395,30 @@ export default async function GaleriaGestionPage() {
 
                   {elemento.autor_fotografia && (
                     <p className="mt-4 text-sm text-slate-600">
-                      <span className="font-semibold">Autor:</span>{" "}
+                      <span className="font-semibold">
+                        Autor:
+                      </span>{" "}
                       {elemento.autor_fotografia}
                     </p>
                   )}
 
                   {elemento.fecha_captura && (
                     <p className="mt-2 text-sm text-slate-600">
-                      <span className="font-semibold">Fecha:</span>{" "}
+                      <span className="font-semibold">
+                        Fecha:
+                      </span>{" "}
                       {mostrarFecha(elemento.fecha_captura)}
                     </p>
                   )}
+
+                  <div className="mt-5 border-t border-slate-100 pt-4">
+                    <Link
+                      href={`/gestion/galeria/elemento/${elemento.id}/editar`}
+                      className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800"
+                    >
+                      Editar archivo →
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}
